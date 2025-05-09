@@ -26,6 +26,7 @@
 
 7. O(log n)
    - when with every step the items remains half like in binary search
+   - Used in divide and conquer algorithm
 
 8. O(nlog n)
    - rarely used like in some sorting algorithm like merge sort and quick sort
@@ -46,3 +47,14 @@
     }
 
 ```
+
+10. Big O of Array List
+    -  If we do operation(add or remove) at the end of the list : O(1)
+    -  If we do operation(add or remove) at the starting of the list: O(n)
+    -  If we do operation in the middle of the list: O(1/2 * n)  as we drops the constants it becomes O(n)
+    -  Looking for an item by value: O(n)
+    -  Looking for an item by index: O(1)
+
+11. logN calculations
+    1.  what power of 2 is equal to n
+    2.  like if N is 100 then log100 is around 7 as 2^7 is 128
