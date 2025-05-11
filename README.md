@@ -56,5 +56,5 @@
     -  Looking for an item by index: O(1)
 
 11. logN calculations
-    1.  what power of 2 is equal to n
-    2.  like if N is 100 then log100 is around 7 as 2^7 is 128
+    -  what power of 2 is equal to n
+    -  like if N is 100 then log100 is around 7 as 2^7 is 128
