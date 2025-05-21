@@ -8,10 +8,14 @@ public class Executor {
 //        myLinkedList.getLength();
         myLinkedList.append(30);
         myLinkedList.append(40);
-        System.out.println("Value is:" + myLinkedList.removeLast().value);
-
-
         myLinkedList.prepand(50);
+
+        myLinkedList.setValue(2,60);
+        myLinkedList.insert(2,30);
+        System.out.println(myLinkedList.remove(3));
+        myLinkedList.printList();
+        System.out.println("---------------------");
+        myLinkedList.reverse();
         myLinkedList.printList();
     }
 }

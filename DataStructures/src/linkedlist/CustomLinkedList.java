@@ -104,4 +104,97 @@ public class CustomLinkedList {
             return node;
         }
     }
+
+    public Node get(int index) {
+        if(index >= length || index < 0) {
+            return null;
+        }
+        int tempIndex = 0;
+        Node temp = head;
+        while(tempIndex != index) {
+            temp = temp.next;
+            tempIndex++;
+        }
+
+        return temp;
+    }
+
+    public boolean setValue(int index, int value) {
+        if(index >= length || index < 0) {
+            return false;
+        }
+
+        int tempIndex = 0;
+        Node temp = head;
+
+        while(tempIndex != index) {
+            temp = temp.next;
+            tempIndex++;
+        }
+
+        temp.value = value;
+        return true;
+    }
+
+    public boolean insert(int index, int value) {
+        if(index < 0 || index > length) {
+            return false;
+        } else if(index == 0) {
+            prepand(value);
+            return true;
+        } else if(index == length) {
+            append(value);
+            return true;
+        } else {
+            Node node = new Node(value);
+            Node previous = head;
+            Node current = head;
+            int tempIndex = 0;
+
+            while(tempIndex != index) {
+                previous = current;
+                current = current.next;
+                tempIndex++;
+            }
+
+            node.next = current;
+            previous.next = node;
+            length++;
+            return true;
+        }
+    }
+
+    public Node remove(int index) {
+        if(index < 0 || index > length-1) {
+            return null;
+        } else if(index == 0) {
+            return removeFirst();
+        } else if(index == length-1) {
+            return removeLast();
+        } else {
+
+            Node previousNode = get(index - 1);
+            Node currentNode = previousNode.next;
+            previousNode.next = currentNode.next;
+            currentNode.next = null;
+            length--;
+            return currentNode;
+        }
+    }
+
+    public void reverse() {
+        Node temp = head;
+        head = tail;
+        tail = temp;
+        Node after = temp.next;
+        Node before = null;
+        int i=0;
+        while (i < length) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+            i++;
+        }
+    }
 }
