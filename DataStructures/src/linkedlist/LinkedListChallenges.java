@@ -105,8 +105,71 @@ public class LinkedListChallenges {
         }
     }
 
+    public int binaryToDecimal() {
+        int total = 0;
+        int index = 0;
+        Node node = head;
+        while (index < length) {
+            total = (total * 2 + (node.value));
+            index++;
+            node = node.next;
+        }
+        return total;
+    }
 
-        // WRITE THE REMOVEDUPLICATES METHOD HERE //
+    public void partitionList(int x) {
+        if(head != null && head.next!= null) {
+            Node dummy1 = new Node(0);
+            Node dummy2 = new Node(0);
+            Node prev1 = dummy1;
+            Node prev2 = dummy2;
+            Node current = head;
+
+            while (current != null) {
+                if (current.value < x) {
+                    prev1.next = current;
+                    prev1 = current;
+                } else {
+                    prev2.next = current;
+                    prev2 = current;
+                }
+                current = current.next;
+            }
+            prev2.next = null;
+            prev1.next = dummy2.next;
+            head = dummy1.next;
+        }
+    }
+
+    public void partitionList1(int x) {
+        if (head == null) return;
+
+        Node dummy1 = new Node(0);
+        Node dummy2 = new Node(0);
+        Node prev1 = dummy1;
+        Node prev2 = dummy2;
+        Node current = head;
+
+        while (current != null) {
+            if (current.value < x) {
+                prev1.next = current;  // Link node to the end of the first list.
+                prev1 = current;       // Update the end pointer of the first list.
+            } else {
+                prev2.next = current;  // Link node to the end of the second list.
+                prev2 = current;       // Update the end pointer of the second list.
+            }
+
+            current = current.next;
+        }
+
+        prev2.next = null;
+
+        prev1.next = dummy2.next;
+        head = dummy1.next;
+    }
+
+
+    // WRITE THE REMOVEDUPLICATES METHOD HERE //
     //                                        //
     //                                        //
     //                                        //

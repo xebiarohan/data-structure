@@ -20,9 +20,14 @@ public class Executor {
 
         DoublyLinkedList list = new DoublyLinkedList(30);
         list.append(40);
-        list.removeLast();
-        list.prepand(20);
+        list.prepend(20);
+        list.append(50);
+        list.append(60);
+        list.append(70);
+
+        list.insert(1,55);
+        list.remove(5);
+
         list.print();
-        list.getLength();
     }
 }
