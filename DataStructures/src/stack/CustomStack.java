@@ -25,4 +25,33 @@ public class CustomStack {
             temp = temp.next;
         }
     }
+
+    public void getTop() {
+        System.out.println("Top: " + top.value);
+    }
+
+    public void getHeight() {
+        System.out.println("Height: " + height);
+    }
+
+    public void push(int value) {
+        Node node = new Node(value);
+        if (top != null) {
+            node.next = top;
+        }
+        top = node;
+        height++;
+    }
+
+    public Node pop() {
+        if(top == null) {
+            return null;
+        } else  {
+            Node temp = top;
+            top = top.next;
+            temp.next = null;
+            height--;
+            return temp;
+        }
+    }
 }

@@ -168,6 +168,63 @@ public class LinkedListChallenges {
         head = dummy1.next;
     }
 
+    public void swapPairs() {
+        Node dummy = new Node(0);
+        if(head == null) return;
+
+        dummy.next = head;
+        int temp;
+        Node first = dummy.next;
+
+        while (first != null && first.next != null) {
+            Node second = first.next;
+            temp = first.value;
+            first.value = second.value;
+            second.value = temp;
+            first = first.next.next;
+        }
+    }
+
+    public void reverseBetween(int m, int n) {
+        Node dummy = new Node(0);
+        dummy.next = head;
+        Node prev = dummy;
+        int index = 0;
+
+        while (index != m) {
+            prev = prev.next;
+            index++;
+        }
+
+        Node current = prev.next;
+        for(int i=0;i<(n-m);i++) {
+            Node nodeToMove = current.next;
+            prev.next = nodeToMove;
+            current = nodeToMove.next;
+            current.next = nodeToMove.next;
+        }
+    }
+
+    public void reverseBetween1(int startIndex, int endIndex) {
+        if (head == null) return;
+        Node dummyNode = new Node(0);
+        dummyNode.next = head;
+
+        Node previousNode = dummyNode;
+
+        for (int i = 0; i < startIndex; i++) {
+            previousNode = previousNode.next;
+        }
+        Node currentNode = previousNode.next;
+
+        for (int i = 0; i < endIndex - startIndex; i++) {
+            Node nodeToMove = currentNode.next;
+            currentNode.next = nodeToMove.next;
+            nodeToMove.next = previousNode.next;
+            previousNode.next = nodeToMove;
+        }
+        head = dummyNode.next;
+    }
 
     // WRITE THE REMOVEDUPLICATES METHOD HERE //
     //                                        //
