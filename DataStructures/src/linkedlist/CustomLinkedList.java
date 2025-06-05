@@ -183,17 +183,17 @@ public class CustomLinkedList {
     }
 
     public void reverse() {
-        Node temp = head;
+        Node current = head;
         head = tail;
-        tail = temp;
-        Node after = temp.next;
+        tail = current;
+        Node after = current.next;
         Node before = null;
         int i=0;
         while (i < length) {
-            after = temp.next;
-            temp.next = before;
-            before = temp;
-            temp = after;
+            after = current.next;
+            current.next = before;
+            before = current;
+            current = after;
             i++;
         }
     }
