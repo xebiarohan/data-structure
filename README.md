@@ -1,3 +1,5 @@
+## COMPLEXITY-CALCULATION
+
 1. Big O
     - Used to measure the complexity of any code
     - How good or bad it is
@@ -58,3 +60,50 @@
 11. logN calculations
     -  what power of 2 is equal to n
     -  like if N is 100 then log100 is around 7 as 2^7 is 128
+
+##  LINKED-LIST
+
+1. Linked lists are dynamic in length where as the for array list we have to provide an initial value (default is 10)
+   
+2. Items of linkedlist can be anywhere in the memory, items of lists are present next to each other 
+
+3. Big O
+    - Adding item at the end of the list : O(1)
+    - Removing item at the end of the list: O(n)
+    - Adding/Removing item at the beginning of the list: O(1)
+    - Adding/Removing item from the middle: O(n)
+    - Searching for a value: O(n)
+
+4. Adding/Removing an item from beginning is bettern in linked list, where as removing last and looking by an index is better in arrays
+
+## BINARY-TREE
+
+1. Binary tree
+    - Each node can point to max of 2 nodes
+    - A tree is a full tree if each node is either pointing to 2 nodes or 0 nodes
+    - Every node can have max of 1 parent
+    - A parent can have max of 2 child
+    - A node that does not have a child is called as a leaf
+
+2. Binary search tree 
+    - It is little different from binary tree
+    - Right child of the parent is greater than the parent
+    - Left child of the parent is smaller than the parent
+    - Complexity is O(logN) for searching, removing, inserting
+    - Worst case is O(N) if all the nodes are in the same line and we want to search as it becomes a linked list
+    - Insert is better in linked list O(1) as we know the value of tail
+    - lookup and remove is better in binary search tree
+
+##  HASH-TABLE
+
+1. Introduction
+    - Hash tables are used to store the key value pair
+    - Hash function is applied on the key to get an index value of the array where the key-value is stored
+    - Hash function is idempotant
+    - Chaining and linear probing are 2 ways of dealing with collisions.
+    - Linear probing means finding the next empty address
+    - Chaining is implemented using the linked list
+
+2. Big O
+    - If there is no collision (best scenario): O(1)
+    - Worst case (all elements on 1 index): O(n)
