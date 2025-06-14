@@ -107,3 +107,18 @@
 2. Big O
     - If there is no collision (best scenario): O(1)
     - Worst case (all elements on 1 index): O(n)
+
+## Graphs
+
+1. Introduction
+   - Here we use the word Vertex instead of Node
+   - Multiple vertex is called Vertices
+   - Link between the verticles is called edges
+   - Edges can be directional (in one direction) or Bi-directional (both side)
+   - Edges can be weighted or non weighted
+   - Tree is a form of graph so is linked list
+   - We can represent Graphs using the adjacency matrix or adjacency list(map with key as the verted and list of connection as value)
+   - Complexity of adjacency list is better than adjacency matrix
+   - As in adjacency matrix we have to store all the 0's along wtih 1's where the connection is present
+   - Adding a new vertex is also very expensive in adjacency matrix as compare to list
+   - 
