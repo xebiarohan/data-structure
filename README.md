@@ -121,4 +121,16 @@
    - Complexity of adjacency list is better than adjacency matrix
    - As in adjacency matrix we have to store all the 0's along wtih 1's where the connection is present
    - Adding a new vertex is also very expensive in adjacency matrix as compare to list
-   - 
+
+## Heaps
+
+1. Introduction
+    - Looks more like a Binary tree
+    - A parent with higher or equal value to its children (known as Max Heap)
+    - A parent with smaller or equal value to its children (known as Min Heap)
+    - It is always a complete tree, means if fills from left to right without any gaps.
+    - we can have duplicate values
+    - We can implement it using the ArrayList, with value start adding from top, then left child and then right child
+    - Left child will be 2*parent + 1 index
+    - Right child will be 2*parent index + 2
+    - Parent can be children_index/2
