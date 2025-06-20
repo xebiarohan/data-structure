@@ -42,4 +42,39 @@ public class CustomHeap {
             parentIndex = getParent(index);
         }
     }
+
+    public Integer remove() {
+       if(heap.isEmpty()) {
+           return null;
+       } else if(heap.size() == 1) {
+           return heap.remove(0);
+       } else {
+           int maxValue = heap.get(0);
+           heap.set(0, heap.remove(heap.size()-1));
+           sinkDown(0);
+           return maxValue;
+       }
+    }
+
+    public void sinkDown(int index) {
+        while (true) {
+            int maxIndex = index;
+            int leftChild = getLeftChild(index);
+            int rightChild = getRightChild(index);
+            if(leftChild < heap.size() && heap.get(leftChild) > heap.get(maxIndex)) {
+                maxIndex = leftChild;
+            }
+
+            if(rightChild < heap.size() && heap.get(rightChild) > heap.get(maxIndex)) {
+                maxIndex = rightChild;
+            }
+
+            if(maxIndex != index) {
+                swap(index,maxIndex);
+                index = maxIndex;
+            } else {
+                return;
+            }
+        }
+    }
 }

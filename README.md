@@ -133,4 +133,8 @@
     - We can implement it using the ArrayList, with value start adding from top, then left child and then right child
     - Left child will be 2*parent + 1 index
     - Right child will be 2*parent index + 2
-    - Parent can be children_index/2
+    - Parent can be (children_index-1)/2
+    - We can only remove the parent node, after removal we have to put the right most leave at the parent node position and bubble it down
+    - Heaps are used for implementing Priority queues
+    - Complexity of insertion or removal is O(logN)
+    - 
