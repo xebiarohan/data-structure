@@ -137,4 +137,8 @@
     - We can only remove the parent node, after removal we have to put the right most leave at the parent node position and bubble it down
     - Heaps are used for implementing Priority queues
     - Complexity of insertion or removal is O(logN)
-    - 
+
+## Recursion
+
+1. Introduction
+   - A method calls inself until a condition satisfies.

@@ -50,24 +50,42 @@ public class BinarySearchTree {
     }
 
     public boolean contains(int value) {
-        if(root == null) {
+        if (root == null) {
             return false;
         }
         Node temp = root;
         while (true) {
-            if(temp.value == value) {
+            if (temp.value == value) {
                 return true;
-            } else if(value < temp.value) {
-                if(temp.left == null) {
+            } else if (value < temp.value) {
+                if (temp.left == null) {
                     return false;
                 }
                 temp = temp.left;
             } else {
-                if(temp.right == null){
+                if (temp.right == null) {
                     return false;
                 }
 
                 temp = temp.right;
+            }
+        }
+    }
+
+    public boolean rContains(int value) {
+        return rContains(root, value);
+    }
+
+    private boolean rContains(Node currentNode, int value) {
+        if (currentNode == null) {
+            return false;
+        } else if (currentNode.value == value) {
+            return true;
+        } else {
+            if (value < currentNode.value) {
+                return rContains(currentNode.left, value);
+            } else {
+                return rContains(currentNode.right, value);
             }
         }
     }

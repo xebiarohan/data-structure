@@ -15,6 +15,6 @@ public class BSTExecutor {
 
         System.out.println(tree.getRoot().left.right.value);
 
-        System.out.println(tree.contains(82));
+        System.out.println(tree.rContains(82));
     }
 }
