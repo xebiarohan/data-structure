@@ -15,11 +15,12 @@
       - Worst case is value is at last place
 
 3. O(n)
-    - Means we have to do operations equal to the number of items (n)
-    - Drop constants: means if for each item we are running it 2 times then total operations become 2n but complexity remains O(n)
+    - we have to do operations equal to the number of items (n)
+    - Drop constants: if for each item we are running it 2 times then total operations become 2n but complexity remains O(n)
+    - it reamins O(n) as the complexity is not increasing with inccrease in the value on n
 
 4. O(n^2)
-    - One for loop inside another for loop
+    - Loop inside a loop
 
 5. Drop non dominant
     - if complexity is O(n^2 + n)then it is equivalent to O(n^2)
@@ -142,3 +143,15 @@
 
 1. Introduction
    - A method calls inself until a condition satisfies.
+
+## Tree traversal
+
+1. Breadth first search
+   - we starts from root node, then traverse its children, then children's children.
+
+2. Depth first search
+   - first we traverse the left most leaf, then its parent,then its other child then goes up and so on.
+   - There are 3 types of depth-first-search
+     - Pre-order  -> parent-left-right
+     - Post-order -> left-right-parent
+     - In-order -> left-parent-right
