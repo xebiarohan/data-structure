@@ -235,4 +235,32 @@ public class BinarySearchTree {
         new Traverse(root);
         return result;
     }
+
+    public boolean isValidBST() {
+        return isValidNode(root);
+    }
+
+    private boolean isValidNode(Node node) {
+        if(node == null) {
+            return true;
+        }
+        if((node.left == null || node.left.value < node.value) &&
+                (node.right == null || node.right.value > node.value)) {
+            return isValidNode(node.left) && isValidNode(node.right);
+        }
+
+        return false;
+    }
+
+    public Integer kthSmallest(int k) {
+        ArrayList<Integer> inorder = DFSInOrder();
+        if( k < 0) {
+            return null;
+        }
+        if(k <= inorder.size()) {
+            return inorder.get(k-1);
+        }
+        return null;
+    }
+
 }

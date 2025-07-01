@@ -21,8 +21,10 @@ public class BSTExecutor {
 //        tree.delete(52);
 //        System.out.println(tree.rContains(52));
 
-        System.out.println(tree.DFSPreOrder());
+//        System.out.println(tree.DFSPreOrder());
+//
+//        System.out.println(tree.DFSPostOrder());
 
-        System.out.println(tree.DFSPostOrder());
+        tree.kthSmallest(2);
     }
 }
