@@ -133,6 +133,7 @@ public class BinarySearchTree {
             } else if (currentNode.right == null) {
                 currentNode = currentNode.left;
             } else {
+                // take the min value of right subtree and put it in the current node and delete that min value node
                 int subTreeMin = minValue(currentNode.right);
                 currentNode.value = subTreeMin;
                 currentNode.right = rDelete(currentNode.right, subTreeMin);
@@ -166,10 +167,10 @@ public class BinarySearchTree {
         while (!queue.isEmpty()) {
             Node node = queue.remove();
             result.add(node.value);
-            if (currentNode.left != null) {
+            if (node.left != null) {
                 queue.add(node.left);
             }
-            if (currentNode.right != null) {
+            if (node.right != null) {
                 queue.add(node.right);
             }
         }
