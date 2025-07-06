@@ -197,4 +197,22 @@ public class CustomLinkedList {
             i++;
         }
     }
+
+    public void bubbleSort() {
+        if(length  > 1) {
+            for(int i = length-1;i > 0;i--) {
+                int currentIndex = 0;
+                Node current = head;
+                while (currentIndex < i) {
+                    if(current.value > current.next.value) {
+                        int temp = current.value;
+                        current.value = current.next.value;
+                        current.next.value = temp;
+                    }
+                    current = current.next;
+                    currentIndex++;
+                }
+            }
+        }
+    }
 }

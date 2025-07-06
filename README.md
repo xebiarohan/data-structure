@@ -155,3 +155,24 @@
      - Pre-order  -> parent-left-right
      - Post-order -> left-right-parent
      - In-order -> left-parent-right
+
+## Sorting Algorithms
+
+1. Bubble sort
+   - Here we compare values, to bubble up the largest value at the end
+   - Sorting in place, without making copy
+   - Complexity : O(N^2)
+   - Space complexity is O(1)
+
+2. Selection Sort
+   - We find the lowest value and replaces it with the number at index 0
+   - Then we find the second lowest and replaces it with the second lowest value and so on.
+   - Complexity O(N^2)
+   - Space complexity is O(1)
+
+3. Insertion sort
+   - Starts from second element of the list
+   - Compare value to its previous values
+   - Complexity O(N^2)
+   - Space complexity is O(1)
+   - If the data is sorted or almost sorted then it is almost O(n)
