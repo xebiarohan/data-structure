@@ -11,7 +11,7 @@ public class Executor {
         myLinkedList.prepand(50);
         myLinkedList.append(5);
 
-        myLinkedList.bubbleSort();
+        myLinkedList.selectionSort();
         myLinkedList.printList();
 
 //

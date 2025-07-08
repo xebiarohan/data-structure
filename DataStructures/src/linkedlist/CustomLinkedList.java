@@ -215,4 +215,63 @@ public class CustomLinkedList {
             }
         }
     }
+
+    public void selectionSort() {
+        if(length > 1) {
+            for(int i=0;i<length;i++) {
+                int currentIndex = 0;
+                Node temp = head;
+                while (currentIndex != i) {
+                    temp = temp.next;
+                    currentIndex++;
+                }
+
+                int minIndex = i;
+                int minValue = temp.value;
+
+                while (temp != null) {
+                    if(temp.value < minValue) {
+                        minIndex = currentIndex;
+                        minValue = temp.value;
+                    }
+                    currentIndex++;
+                    temp = temp.next;
+                }
+
+                if(i != minIndex) {
+                    int temp_index1 = 0;
+                    Node tempNode1 = head;
+
+                    while (i != temp_index1) {
+                        tempNode1 = tempNode1.next;
+                        temp_index1++;
+                    }
+
+                    int temp_index2 = 0;
+                    Node tempNode2 = head;
+
+                    while (minIndex != temp_index2) {
+                        tempNode2 = tempNode2.next;
+                        temp_index2++;
+                    }
+
+                    int placeHolder = tempNode1.value;
+                    tempNode1.value = tempNode2.value;
+                    tempNode2.value = placeHolder;
+                }
+            }
+        }
+    }
+
+    public void insertionSort() {
+        if(length > 1) {
+            Node temp = head.next;
+            while (temp != null) {
+                int currentValue = temp.value;
+
+
+                temp = temp.next;
+            }
+        }
+    }
 }

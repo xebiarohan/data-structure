@@ -176,3 +176,13 @@
    - Complexity O(N^2)
    - Space complexity is O(1)
    - If the data is sorted or almost sorted then it is almost O(n)
+
+4. Merge sort
+   - Based on divide and conquer
+   - We break the list in half till we have 1 element each in all the lists
+   - then we take first 2 lists, sort them, then next 2 list and so on
+   - then do the same with the resulted list from previous step
+   - In the end we will have a single sorted list
+   - Space complexity is O(n) as it creates n lists of 1 item each
+   - Time Complexity is O(nlogn)
+   - If we want to sort multiple types of data then this is the best complexity that we can get
