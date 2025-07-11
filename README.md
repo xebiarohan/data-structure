@@ -186,3 +186,13 @@
    - Space complexity is O(n) as it creates n lists of 1 item each
    - Time Complexity is O(nlogn)
    - If we want to sort multiple types of data then this is the best complexity that we can get
+  
+5. Quick sort
+   - First take the first element as a pivot element
+   - then find the smaller and greater value, when we have 1 smaller and 1 larger, replace those
+   - after the end all the smaller and larger value will be togather
+   - replace the pivot element with the last smallest value
+   - Pivot element will reach its final position
+   - Do the same to the left and right sub-list 
+   - Space complexity is O(1)
+   - Time complexity is O(nlogn)

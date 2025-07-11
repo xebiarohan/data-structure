@@ -274,4 +274,38 @@ public class CustomLinkedList {
             }
         }
     }
+
+    public void merge(CustomLinkedList otherList) {
+        Node first = head;
+        Node firstPrevious = null;
+        Node second = otherList.head;
+        while (first != null && second != null) {
+            if(first.value < second.value) {
+                firstPrevious = first;
+                first = first.next;
+            } else {
+                Node newNode = new Node(second.value);
+                second = second.next;
+                newNode.next = first;
+                if(firstPrevious != null) {
+                    firstPrevious.next = newNode;
+                }
+                firstPrevious = newNode;
+                length++;
+            }
+        }
+
+        while (second != null) {
+            Node newNode = new Node(second.value);
+            second = second.next;
+            if(firstPrevious != null) {
+                firstPrevious.next = newNode;
+                firstPrevious = firstPrevious.next;
+            } else {
+                firstPrevious = newNode;
+            }
+            length++;
+        }
+
+    }
 }
